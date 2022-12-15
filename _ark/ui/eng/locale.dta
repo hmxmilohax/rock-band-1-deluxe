@@ -1,11 +1,11 @@
 (legal_text
-   "© 2007 Harmonix Music Systems, Inc. All Rights Reserved. Harmonix, Rock Band and all related titles and logos are trademarks of Harmonix Music Systems, Inc., an MTV Networks company. Rock Band developed by Harmonix Music Systems, Inc. MTV: Music Television, MTV Games and all related titles and logos are trademarks of MTV Networks, a division of Viacom International Inc. Protected by United States Patent Nos. 6,429,863, 6,482,087 and 7,164,076.  Other domestic and foreign patent applications pending.")
+   "Â© 2007 Harmonix Music Systems, Inc. All Rights Reserved. Harmonix, Rock Band and all related titles and logos are trademarks of Harmonix Music Systems, Inc., an MTV Networks company. Rock Band developed by Harmonix Music Systems, Inc. MTV: Music Television, MTV Games and all related titles and logos are trademarks of MTV Networks, a division of Viacom International Inc. Protected by United States Patent Nos. 6,429,863, 6,482,087 and 7,164,076.  Other domestic and foreign patent applications pending.")
 (ea_splash_legal
    "EA<sup>TM</sup> is an ELECTRONIC ARTS<sup>TM</sup> BRAND.")
 (mtv_splash_legal
    "Harmonix, Rock Band and all related titles and logos are trademarks of Harmonix Music Systems, Inc., an MTV Networks company. MTV: Music Television, MTV Games and all related titles and logos are trademarks of MTV Networks, a division of Viacom International Inc.")
 (harmonix_splash_legal
-   "© 2007 Harmonix Music Systems, Inc. All Rights Reserved. Rock Band developed by Harmonix Music Systems, Inc. Protected by United States Patent Nos. 6,429,863, 6,482,087 and 7,164,076. Other domestic and foreign patent applications pending.")
+   "Â© 2007 Harmonix Music Systems, Inc. All Rights Reserved. Rock Band developed by Harmonix Music Systems, Inc. Protected by United States Patent Nos. 6,429,863, 6,482,087 and 7,164,076. Other domestic and foreign patent applications pending.")
 #include locale_venues.dta
 #include locale_events.dta
 #include locale_rockmoments.dta
@@ -20,12 +20,12 @@
 (shell_trueskill_ranking
    "")
 (attract_press_start
-   "Press START button")
+   "")
 #else
 (shell_trueskill_ranking
    "TrueSkill Rating")
 (attract_press_start
-   "PRESS START")
+   "")
 #endif
 (tour_finish_gig
    "Finish Set")
@@ -1031,9 +1031,9 @@
 (loading_help48
    "Need to change the audio settings during a song? square button = mic sensitivity, triangle button = mic volume, circle button = vocal track.")
 (loading_help51
-   "Buy new songs for Rock Band at the PLAYSTATION<sup>®</sup>Store!")
+   "Buy new songs for Rock Band at the PLAYSTATION<sup>Â®</sup>Store!")
 (loading_help38
-   "Buy new songs for Rock Band at the PLAYSTATION<sup>®</sup>Store!")
+   "Buy new songs for Rock Band at the PLAYSTATION<sup>Â®</sup>Store!")
 #else
 (loading_help34
    "Need to change the audio settings during a song? X = mic sensitivity, B = mic volume, Y = vocal track.")
@@ -1141,7 +1141,7 @@
 (loading_trivia31
    "Soundgarden bassist and co-founding member Hiro Yamamoto departed the band in order to complete a Master's Degree in Physical Chemistry.")
 (loading_trivia32
-   "Blue Öyster Cult singer Eric Bloom claims that he was the cowbell player on \qDon't Fear the Reaper.\q Former bassist Joe Bouchard, however, says that the cowbell virtuoso was his brother Albert.")
+   "Blue Ã–yster Cult singer Eric Bloom claims that he was the cowbell player on \qDon't Fear the Reaper.\q Former bassist Joe Bouchard, however, says that the cowbell virtuoso was his brother Albert.")
 (loading_trivia33
    "Black Sabbath was originally named the Polka Tulk Blues Company.")
 (loading_trivia34
@@ -1307,7 +1307,7 @@
 (loading_trivia114
    "The New Pornographers once played in New York as part of an Independence Day celebration. Nobody seemed to mind that they were Canadian.")
 (loading_trivia115
-   "Pixies frontman Black Francis reportedly found bassist Kim Deal by taking out an ad looking for a bass player who was influenced by both Hüsker Dü and Peter, Paul and Mary.")
+   "Pixies frontman Black Francis reportedly found bassist Kim Deal by taking out an ad looking for a bass player who was influenced by both HÃ¼sker DÃ¼ and Peter, Paul and Mary.")
 (loading_trivia116
    "The Police singer/bassist Sting played Ace Face in the film \qQuadrophenia,\q a cinematic adaptation of The Who's album of the same name.")
 (loading_trivia117
@@ -1337,7 +1337,7 @@
 (loading_trivia129
    "In 2001, former Queens of the Stone Age member Nick Oliveri was arrested in Rio for performing onstage wearing only his bass.")
 (loading_trivia130
-   "Blue Öyster Cult formed in 1967 under the name Soft White Underbelly.")
+   "Blue Ã–yster Cult formed in 1967 under the name Soft White Underbelly.")
 (loading_trivia131
    "After Mike \qThe Man\q Morris left the band, \qFaith No Man\q became Faith No More.")
 (loading_trivia132
@@ -1413,7 +1413,7 @@
 (loading_trivia167
    "Aerosmith played the \qFuture Villain Band\q in the movie version of Sgt. Pepper's Lonely Hearts Club Band.")
 (loading_trivia168
-   "Along with Aerosmith, bands including The Yardbirds, Led Zeppelin, Racer X, Motörhead, and Bon Jovi have all covered \qTrain Kept A Rollin'.\q")
+   "Along with Aerosmith, bands including The Yardbirds, Led Zeppelin, Racer X, MotÃ¶rhead, and Bon Jovi have all covered \qTrain Kept A Rollin'.\q")
 (loading_trivia169
    "James Hetfield of Metallica has reportedly stated that Aerosmith was his biggest musical influence.")
 (loading_trivia170
@@ -3292,7 +3292,7 @@
 (game_ranked_hth
    "Ranked Multiplayer")
 (error_lost_connection
-   "You have lost connection to the PLAYSTATION<sup>®</sup>Network. You will be unable to access any online features until you sign in again.")
+   "You have lost connection to the PLAYSTATION<sup>Â®</sup>Network. You will be unable to access any online features until you sign in again.")
 (error_ethernet_unplugged
    "There is no ethernet cable connected.")
 #endif
@@ -3350,7 +3350,7 @@
 #endif
 #ifdef HX_PS3
 (leaderboards_not_available_connection
-   "You are unable to access leaderboards while logged out of PLAYSTATION<sup>®</sup>Network.")
+   "You are unable to access leaderboards while logged out of PLAYSTATION<sup>Â®</sup>Network.")
 #else
 (leaderboards_not_available_connection
    "You are unable to access leaderboards while logged out of Xbox LIVE.")
@@ -3387,7 +3387,7 @@
    "Your website code is: %s")
 #ifdef HX_PS3
 (motd_not_signed_in
-   "You must be signed into a PLAYSTATION<sup>®</sup>Network account to access leaderboards and your website code")
+   "You must be signed into a PLAYSTATION<sup>Â®</sup>Network account to access leaderboards and your website code")
 #else
 (motd_not_signed_in
    "You must be signed into an Xbox LIVE enabled gamer profile to access leaderboards")
@@ -3395,9 +3395,9 @@
 (motd_no_rock_central
    "Attempting to connect to Rock Central")
 (privileges_restricted_strict
-   "Connecting to the Rock Central server is disabled on your PLAYSTATION<sup>®</sup>Network account due to parental control restrictions.\n\nYou are not allowed to access this mode.")
+   "Connecting to the Rock Central server is disabled on your PLAYSTATION<sup>Â®</sup>Network account due to parental control restrictions.\n\nYou are not allowed to access this mode.")
 (privileges_restricted_lenient
-   "Connecting to the Rock Central server is disabled on your PLAYSTATION<sup>®</sup>Network account due to parental control restrictions.\n\nYou will be unable to view leaderboards or post your scores.")
+   "Connecting to the Rock Central server is disabled on your PLAYSTATION<sup>Â®</sup>Network account due to parental control restrictions.\n\nYou will be unable to view leaderboards or post your scores.")
 (create_char_vk_title
    "Name Your Character")
 (create_char_vk_desc
