@@ -662,15 +662,14 @@
             download
             {event.lst selected_sym}}})
    (SCROLL_MSG
-    ;  {if
-    ;    ; {!=
-        ;    {{tour solo_event_provider}
-         ;      town
-         ;      {event.lst selected_pos}}
-          ;  {{tour performer}
-         ;      town}}
-         {synth play bwt_swish.cue}
-         ;}
+      {if
+         {!=
+            {{tour solo_event_provider}
+               town
+               {event.lst selected_pos}}
+            {{tour performer}
+               town}}
+         {synth play bwt_swish.cue}}
       {$this update_selection})
    (SELECT_START_MSG
       {if

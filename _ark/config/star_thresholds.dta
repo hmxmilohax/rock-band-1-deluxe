@@ -122,4 +122,4 @@
       99.0))
 (bonus_thresholds 0.25 0.5 0.75 0.9 1.0 1.0 1.0)
 (difficulty_thresholds
-   (kDifficultyEasy kDifficultyEasy kDifficultyEasy kDifficultyEasy kDifficultyEasy kDifficultyEasy kDifficultyEasy))
+   (kDifficultyEasy kDifficultyEasy kDifficultyEasy kDifficultyEasy kDifficultyEasy kDifficultyExpert kDifficultyExpert))

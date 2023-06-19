@@ -118,10 +118,6 @@
    (enter_time 0.0)
    (attract_timeout_done FALSE)
    (enter
-      #ifdef HX_PS3
-      {logo.tex set_bitmap "ui/logo_keep.png"}
-      {$this iterate UILabel $l {$l set_showing FALSE}}
-      #endif
       {set
          [enter_time]
          {taskmgr ui_seconds}}

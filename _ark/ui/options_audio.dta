@@ -325,6 +325,301 @@
       {autoload})}
 {new
    UIPanel
+   options_milo_panel
+   (file
+      "options_audio_ps3.milo")
+   (focus instruments.btn)
+   (signin_change_waiting FALSE)
+   (load
+      {content_mgr start_refresh})
+   (is_loaded
+      {content_mgr refresh_done})
+   (enter
+      {mono.btn set_showing TRUE}
+      {$this enable mono.btn}
+      {vocal_options.btn get_local_pos $labelpos_x $labelpos_y $labelpos_z}
+      {vocal_options.btn set_local_pos {+ $labelpos_x 75} $labelpos_y $labelpos_z}
+      {instruments.sld set_num_steps 41} ;number of steps for note speed slider
+      {background.sld set_num_steps 31} ;number of steps for song speed slider
+      {crowd.sld set_num_steps 60} ;number of steps for venue fps slider
+      {instruments.sld set_current {int {+ 0.5 {/ {+ {- $trackspeed 1} 0.5} 0.05}}}} ;set note speed slider based on current value
+      {background.sld set_current {int {+ 0.5 {/ {- $speedmod 1} 0.05}}}} ;set song speed slider based on current value
+      {crowd.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
+      {instruments.btn set_localized {sprintf {localize trackspeed_msg} {int {+ 0.5 {* $trackspeed 100}}}}} ;set note speed msg
+      {background_music.btn set_localized {sprintf {localize speed_msg} {int {+ 0.5 {* $speedmod 100}}}}} ;set song speed msg
+      {crowd.btn set_localized {sprintf {localize fps_msg} {int $emulatefps}}} ;set venue fps msg
+      {doubly.btn set_localized {localize nofail}}
+      {bass_boost.btn set_localized {localize blackbg}}
+      {mono.btn set_localized {localize nocrowd}}
+      {$this update_all_from_profile}
+      {session add_sink $this signin_changed}
+      {memcardmgr add_sink $this save_load_all_complete_msg}
+      {helpbar
+         set_limit_to_player_num
+         {options_audio_screen get player_num}}
+      {bg_name.mesh set_showing FALSE}
+      {gamertag.lbl set_showing FALSE}
+      {instrument.lbl set_showing FALSE}
+      {audio_options.lbl set_localized {localize milosliderlbl}}
+      {vocal_options.btn set_localized {localize gameplay_options}}
+      {sfx.btn set_showing FALSE}
+      {$this disable sfx.btn}
+      {sfx.sld set_showing FALSE})
+   (display_trackspeed_msg
+      ($tspd)
+      {instruments.btn set_localized {sprintf {localize trackspeed_msg} {int {+ 0.5 {* $tspd 100}}}}})
+   (display_speed_msg
+      ($mspd)
+     {background_music.btn set_localized {sprintf {localize speed_msg} {int {+ 0.5 {* $mspd 100}}}}})
+   (display_fps_msg
+      ($fps)
+     {crowd.btn set_localized {sprintf {localize fps_msg} {int $fps}}}) ;don't add 1 here because this is being fed the actual fps
+   (exit
+      {song_preview ''}
+      {meta music_start}
+      {session remove_sink $this signin_changed}
+      {memcardmgr remove_sink $this save_load_all_complete_msg}
+      {helpbar set_limit_to_player_num -1})
+   (save_load_all_complete_msg
+      {$this update_all_from_profile})
+   (FOCUS_MSG
+      {switch
+         $new_focus
+         (vocal_options.btn
+            {helpbar
+               set_config
+               (helpbar_back helpbar_select)})
+         ((background.btn crowd.btn instruments.btn sfx.btn)
+            {helpbar
+               set_config
+               (helpbar_back helpbar_changesetting)})
+         ((background.lsd crowd.sld instruments.sld sfx.sld)
+            {helpbar
+               set_config
+               (helpbar_cancel helpbar_confirmsetting)})
+         ((bass_boost.btn doubly.btn mono.btn)
+            {$this update_check_help $new_focus})})
+   (SCROLL_SELECT_MSG
+      {if_else
+         $selected
+         {helpbar
+            set_config
+            (Cancel OK)}
+         {helpbar
+            set_config
+            (helpbar_back Select)}}
+      {$this on_slider_change $component})
+   (SCROLL_MSG
+      {$this on_slider_change $component})
+   (SELECT_MSG
+      {switch
+         $component
+         (bass_boost.btn
+            {set $blackbg {! $blackbg}}
+               {$this
+                  update_from_profile
+                  {$this find bass_check.mesh}}
+               {$this update_check_help $component})
+         (doubly.btn
+            {set $nofail {! $nofail}}
+               {$this
+                  update_from_profile
+                  {$this find doubly_check.mesh}}
+               {$this update_check_help $component})
+         (vocal_options.btn
+            {options_gameplay_screen set player_num $player_num}
+            {warn_no_signin_goto_screen options_gameplay_screen $player_num})
+         (instruments.btn
+            {instruments.sld store}
+            {$this set_focus instruments.sld})
+         (background_music.btn
+            {background.sld store}
+            {$this set_focus background.sld})
+         (crowd.btn
+            {crowd.sld store}
+            {$this set_focus crowd.sld})
+         (sfx.btn
+            {sfx.sld store}
+            {$this set_focus sfx.sld})
+         (mono.btn
+            {set $nocrowd {! $nocrowd}}
+               {$this
+                  update_from_profile
+                  {$this find mono_check.mesh}}
+               {$this update_check_help $component})
+         })
+   (BUTTON_DOWN_MSG
+      {switch
+         {$this focus_name}
+         (instruments.sld
+            {switch
+               $button
+               (kPad_X
+                  {instruments.sld confirm}
+                  {$this set_focus instruments.btn})
+               (kPad_Tri
+                  {instruments.sld undo $player_num}
+                  {$this set_focus instruments.btn})
+               kDataUnhandled})
+         (background.sld
+            {switch
+               $button
+               (kPad_X
+                  {background.sld confirm}
+                  {$this set_focus background_music.btn})
+               (kPad_Tri
+                  {background.sld undo $player_num}
+                  {$this set_focus background_music.btn})
+               kDataUnhandled})
+         (crowd.sld
+            {switch
+               $button
+               (kPad_X
+                  {crowd.sld confirm}
+                  {$this set_focus crowd.btn})
+               (kPad_Tri
+                  {crowd.sld undo $player_num}
+                  {$this set_focus crowd.btn})
+               kDataUnhandled})
+         (sfx.sld
+            {switch
+               $button
+               (kPad_X
+                  {sfx.sld confirm}
+                  {$this set_focus sfx.btn})
+               (kPad_Tri
+                  {sfx.sld undo $player_num}
+                  {$this set_focus sfx.btn})
+               kDataUnhandled})
+         kDataUnhandled})
+   (set_speeds
+         {do
+            {set $trackspeed {- {+ 1 {* {instruments.sld current} 0.05}} 0.5}}
+            {set $speedmod
+               {+ 1 {* {background.sld current} 0.05}}}
+            {set $emulatefps
+               {+ 1 {crowd.sld current}}}
+         {set $leaderspeed $speedmod}}
+         {set $leaderspeed $speedmod}
+         {$this display_trackspeed_msg $trackspeed}
+         {$this display_speed_msg $speedmod}
+         {$this display_fps_msg $emulatefps})
+   (on_slider_change
+      ($component)
+      {switch
+         $component
+         (instruments.sld
+               {do {set $component current}}
+            {$this set_speeds})
+         (background.sld
+               {do {set $component current}}
+            {$this set_speeds})
+         (crowd.sld
+               {do {set $component current}}
+               {$this set_speeds})
+         ;(sfx.sld
+         ;   {profile_mgr
+         ;      set_fx_volume
+         ;      {$component current}}
+         ;   {play_game_seq slider_sfx.cue})
+         })
+   (update_all_from_profile
+      {$this
+         iterate
+         UISlider
+         $s
+         {$this update_from_profile $s}}
+      {$this
+         update_from_profile
+         {$this find bass_check.mesh}}
+      {$this
+         update_from_profile
+         {$this find doubly_check.mesh}}
+      {$this
+         update_from_profile
+         {$this find mono_check.mesh}})
+   (update_from_profile
+      ($component)
+      {switch
+         $component
+         (instruments.sld
+            {$component
+               set_current
+               {int {+ 0.5 {/ {+ {- $trackspeed 1} 0.5} 0.05}}}})
+         (background.sld
+            {$component
+               set_current
+               {int {+ 0.5 {/ {- $speedmod 1} 0.05}}}})
+         (crowd.sld
+            {$component
+               set_current
+               {int {- $emulatefps 1}}})
+         ;(sfx.sld
+          ;  {$component
+           ;    set_current
+            ;   {profile_mgr get_fx_volume}})
+         (bass_check.mesh
+            {{$this find bass_check.mesh}
+               set_showing
+               $blackbg})
+         (doubly_check.mesh
+            {{$this find doubly_check.mesh}
+               set_showing
+               $nofail})
+         (mono_check.mesh
+            {{$this find mono_check.mesh}
+               set_showing
+               $nocrowd})
+         })
+   (update_check_help
+      ($component)
+      {switch
+         $component
+         (bass_boost.btn
+            {helpbar
+               set_config
+               (helpbar_back helpbar_toggleoption)})
+         (doubly.btn
+            {helpbar
+               set_config
+               (helpbar_back helpbar_toggleoption)})
+         (mono.btn
+            {helpbar
+               set_config
+               (helpbar_back helpbar_toggleoption)})
+         })
+   (SIGNIN_CHANGED_MSG
+      {if_else
+         {==
+            {ui current_screen}
+            options_audio_screen}
+         {$this process_signin_change}
+         {if
+            {!
+               {option_profile_change_warning_screen is_up}}
+            {$this set signin_change_waiting TRUE}}})
+   (TRANSITION_COMPLETE_MSG COMMON_TRANSITION_HANDLERS_FOR_SIGN_OUT)
+   (process_signin_change
+      {if
+         {==
+            {ui current_screen}
+            options_audio_screen}
+         {ui push_screen option_profile_change_warning_screen}})}
+{new
+   UIScreen
+   options_milo_screen
+   (panels meta movie_panel options_milo_panel options_lower3rd_panel helpbar)
+   (focus options_milo_panel)
+   (back options_screen)
+   (helpbar
+      (helpbar_back helpbar_select))
+   (player_num -1)
+   (BUTTON_DOWN_MSG
+      kDataUnhandled)
+   (TRANSITION_COMPLETE_MSG
+      {autoload})}
+{new
+   UIPanel
    vocal_options_panel
    (file
       "options_vocal.milo")
