@@ -664,7 +664,15 @@
 #define TOUR_BAND_CONFIRM_DIALOG
 ({dialog_panel
       set_yesno
-         {localize_token confirm_quit}
+      {if_else
+         {{tour performer}
+            fans_lost_on_fail}
+         {sprintf
+            {localize tour_band_lose_fans_warning}
+            {localize_separated_int
+               {{tour performer}
+                  fans_lost_on_fail}}}
+         {localize_token confirm_quit}}
       no.btn})
 {new
    UIScreen
@@ -694,6 +702,8 @@
          {switch
             $component
             (yes.btn
+               {{tour performer}
+                  lose_song}
                {pause_panel on_quit})
             (no.btn
                {ui goto_screen pause_screen})}}
@@ -729,6 +739,8 @@
          {switch
             $component
             (yes.btn
+               {{tour performer}
+                  lose_song}
                {pause_panel on_restart})
             (no.btn
                {ui goto_screen pause_screen})}}

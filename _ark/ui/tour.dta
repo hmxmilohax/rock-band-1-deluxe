@@ -26,11 +26,17 @@
       {synth play bwt_spaceamb.cue}
       {set
          [playing_town_loop]
-         FALSE})
+         FALSE}
+      #ifdef HX_PS3
+      {rnd set_sync 2}
+      #endif)
    (exit
       {synth stop bwt_spaceamb.cue}
       {synth stop bwt_cityamb.cue}
-      {fx fade_out})
+      {fx fade_out}
+      #ifdef HX_PS3
+      {rnd set_sync 1}
+      #endif)
    (play_town_loop
       ($play)
       {if_else

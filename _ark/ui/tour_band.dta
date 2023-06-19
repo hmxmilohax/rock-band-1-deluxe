@@ -486,12 +486,16 @@
       {switch
          $component
          (gigguide.btn
-            {if_else
-               {==
-                  {session mode}
-                  kNetLocal}
-               {tour_band_waiting_panel advance}
-               {ui goto_screen tour_band_waiting_screen}})
+            {if
+               {>=
+                  {game get_num_participants}
+                  {gamemode get min_num_participants}}
+               {if_else
+                  {==
+                     {session mode}
+                     kNetLocal}
+                  {tour_band_waiting_panel advance}
+                  {ui goto_screen tour_band_waiting_screen}}})
          (rokkshoppe.btn
             {band_ui_sink set_block_mode kBlockShop}
             {shop_char_panel set char_player_num $player_num}
@@ -516,7 +520,16 @@
                   {leaderboards_netwatcher_panel set return_screen tour_band_hub_screen}
                   {ui goto_screen tour_hub_community_screen}}
                {ui push_screen leaderboards_not_available_screen}})}
-      kDataUnhandled)}
+      kDataUnhandled)
+   (SELECT_MSG
+      {switch
+         $component
+         (gigguide.btn
+            {if
+               {<
+                  {game get_num_participants}
+                  {gamemode get min_num_participants}}
+               {ui push_screen tour_band_min_participants_screen}})})}
 {new
    UIScreen
    tour_band_hub_screen

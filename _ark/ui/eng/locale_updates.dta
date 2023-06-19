@@ -1,27 +1,3 @@
-(milosliderlbl
-   "Speed / Framerate")
-(speed_msg
-   "SONG SPEED: %d%%")
-(trackspeed_msg
-   "NOTE SPEED: %d%%")
-(fps_msg
-   "VENUE FPS: %dFPS")
-(choke_solo 
-   "Awesome Choke!")
-(nice_solo
-   "Nice")
-(os_blackbg {sprint "Disable Venues: " {if_else $blackbg "ON" "OFF"}})
-(os_nofail {sprint "No Fail: " {if_else $nofail "ON" "OFF"}})
-(os_noflames {sprint "No Flames: " {if_else $noflames "ON" "OFF"}})
-(os_nocrowd {sprint "Crowd SFX: " {if_else $nocrowd "OFF" "ON"}})
-(os_gems {sprint "Gems: " $gem})
-(os_smashers {sprint "Smashers: " $smasher})
-(os_dxsettings "DELUXE SETTINGS")
-(os_spd "Speed Modifiers")
-(os_gp "Gameplay Modifiers")
-(os_vis "Visual Modifiers")
-(os_songtitle {sprint "Song Title Always: " {if_else $songtitle "ON" "OFF"}})
-;;;;;
 (store_cache_name
    "Rock Band Music Store Data")
 (song_info_cache_name

@@ -25,7 +25,7 @@
    #endif
    {set
       $first_screen
-      {if_else $commerce store_loading_screen splash_screen}}
+      {if_else $commerce store_loading_screen intro_movie_screen}}
    {ui my_init}
    {if
       $commerce

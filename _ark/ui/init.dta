@@ -33,44 +33,9 @@
 #include net_delegator.dta
 #include store.dta
 #include export.dta
-#include overshell.dta
 #ifndef _SHIP
 #include framerate/frame_rate.dta
 #endif
-
-;disable crowd sfx
-{set $nocrowd FALSE}
-
-;sets default track speed. 1.15 is 115%, 1.30 is 130% and so on.
-{set $trackspeed 1.0}
-
-;sets default song speed 1.15 is 115%, 1.30 is 130% and so on.
-{set $speedmod 1.0}
-
-;set default venue fps.
-{set $emulatefps 24}
-
-;no venues
-{set $blackbg FALSE}
-
-;nofail
-{set $nofail FALSE}
-
-;no flames
-{set $noflames FALSE}
-
-;do gem custom textures
-{set $gemcustomtexture FALSE}
-
-;gem texture
-{set $gem "rb1"}
-
-;do smasher custom textures
-{set $smashercustomtexture FALSE}
-
-;smasher texture
-{set $smasher "rb1"}
-
 {mixer_panel load}
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
