@@ -1,5 +1,5 @@
 (milosliderlbl
-   "Speed / Framerate")
+   "Deluxe Settings")
 (speed_msg
    "SONG SPEED: %d%%")
 (trackspeed_msg
@@ -10,8 +10,8 @@
    "Awesome Choke!")
 (nice_solo
    "Nice")
-(blackbg "Disable Venues")
-(nofail "No Fail")
+(blackbg "Black Background")
+(nofail "No Fail Mode")
 (gameplay_options "Gameplay Options")
 (nocrowd "No Crowd SFX")
 ;;;;;
