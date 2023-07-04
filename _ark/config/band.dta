@@ -70,7 +70,7 @@
    #include synth.dta)
 (joypad
    (ignore)
-   (hold_ms 500)
+   (hold_ms 300)
    (repeat_ms 50)
    (midi_joypad
       (disable FALSE))
