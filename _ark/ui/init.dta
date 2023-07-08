@@ -55,6 +55,216 @@
 ;nofail
 {set $nofail FALSE}
 
+;gem texture
+{set $gem "rb2dx"}
+
+;smasher texture
+{set $smasher "rb2dx"}
+
+;streak texture
+{set $streak "rb4"}
+
+;overdrive texture
+{set $spotlight "rb4"}
+
+;multiplier ring texture
+{set $multiring "rb1"}
+
+;overdrive bar texture
+{set $odbar "rb2dx"}
+
+;rails texture
+{set $rails "none"}
+
+;flames texture
+{set $flames "rb2dx"}
+
+;score texture
+{set $scoretex "rb4"}
+
+;vocal arrow texture
+{set $voxarrow "rb2dx"}
+
+;vocal notes texture
+{set $voxnotes "rb2dx"}
+
+;vocal overdrive texture
+{set $voxod "rb2"}
+
+;vocal highway texture
+{set $voxhw "rb2"}
+
+#define INIT_DTA_READER
+(
+   {set $dxsettings {read_file #ifdef HX_XBOX "GAME:/dx.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30050/USRDIR/dx.dta" #endif}}
+   {foreach $entry $dxsettings
+      {if {== {elem $entry 0} {basename no_save_mode}}
+         {set $nosavemode
+            {elem {find $entry no_save_mode} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename track_speed}}
+         {set $trackspeed
+            {elem {find $entry track_speed} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename song_speed}}
+         {set $speedmod
+            {elem {find $entry song_speed} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename emulate_fps}}
+         {set $emulatefps
+            {elem {find $entry emulate_fps} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename gem_texture}}
+         {set $gem
+            {elem {find $entry gem_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename smasher_texture}}
+         {set $smasher
+            {elem {find $entry smasher_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename streak_texture}}
+         {set $streak
+            {elem {find $entry streak_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename spotlight_texture}}
+         {set $spotlight
+            {elem {find $entry spotlight_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename multiring_texture}}
+         {set $multiring
+            {elem {find $entry multiring_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename odbar_texture}}
+         {set $odbar
+            {elem {find $entry odbar_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename rails_texture}}
+         {set $rails
+            {elem {find $entry rails_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename flames_texture}}
+         {set $flames
+            {elem {find $entry flames_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename score_texture}}
+         {set $scoretex
+            {elem {find $entry score_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename voxarrow_texture}}
+         {set $voxarrow
+            {elem {find $entry voxarrow_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename voxnotes_texture}}
+         {set $voxnotes
+            {elem {find $entry voxnotes_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename voxod_texture}}
+         {set $voxod
+            {elem {find $entry voxod_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename voxhw_texture}}
+         {set $voxhw
+            {elem {find $entry voxhw_texture} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename angle_preset}}
+         {set $anglepreset
+            {elem {find $entry angle_preset} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename mod_nofail}}
+         {set $nofail
+            {elem {find $entry mod_nofail} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename mod_blackvenue}}
+         {set $blackbg
+            {elem {find $entry mod_blackvenue} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename mod_nocrowd}}
+         {set $nocrowd
+            {elem {find $entry mod_nocrowd} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename load_custom_settings}}
+         {set $loadcustomsettings
+            {elem {find $entry load_custom_settings} 1}
+         }
+      }
+   }
+)
+;{unless {file_exists dx.dta} INIT_DTA_WRITER}
+INIT_DTA_READER
+
+{if {== $gem rb2} {set $gem none}}
+
+{if {== $smasher rb2} {set $smasher none}}
+
+{if {== $streak rb2} {set $streak none}}
+
+;{if {== $spotlight none} {set $spotlight none}}
+
+{if {== $multiring rb1} {set $multiring none}}
+
+{if {== $odbar rb2} {set $odbar none}}
+
+{if {== $rails rb2} {set $rails none}}
+
+{if {== $flames rb2} {set $flames none}}
+
+{if {== $scoretex rb1} {set $scoretex none}}
+
+{if {== $voxarrow rb1} {set $voxarrow none}}
+
+{if {== $voxnotes rb2} {set $voxnotes none}}
+
+{if {== $voxod rb1} {set $voxod none}}
+
+{if {== $voxhw rb1} {set $voxhw none}}
+
+{unless {== $gem none} {set $gemcustomtexture TRUE}}
+
+{unless {== $smasher none} {set $smashercustomtexture TRUE}}
+
+{unless {== $streak none} {set $streakcustomtexture TRUE}}
+
+{unless {== $spotlight none} {set $spotlightcustomtexture TRUE}}
+
+{unless {== $multiring none} {set $multiringcustomtexture TRUE}}
+
+{unless {== $odbar none} {set $odbarcustomtexture TRUE}}
+
+{unless {== $rails none} {set $railscustomtexture TRUE}}
+
+{unless {== $flames none} {set $flamescustomtexture TRUE}}
+
+{unless {== $scoretex none} {set $scorecustomtexture TRUE}}
+
+{unless {== $voxarrow none} {set $voxarrowcustomtexture TRUE}}
+
+{unless {== $voxnotes none} {set $voxnotescustomtexture TRUE}}
+
+{unless {== $voxod none} {set $voxodcustomtexture TRUE}}
+
+{unless {== $voxhw none} {set $voxhwcustomtexture TRUE}}
+
 {mixer_panel load}
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
