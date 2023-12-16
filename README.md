@@ -1,70 +1,129 @@
-# Rock-Band-1-Deluxe
+<div align="center">
 
-![Header Image](dependencies/header.png)
+<img src="dependencies/header.png" width="50%" alt="Header">
 
-## Introduction
+## *Rock Band 1 Deluxe* is a light quality-of-life improvement mod for RPCS3 and Xbox 360.
 
-This Repo contains everything you need to build an ark for Rock Band 1 Deluxe for PS3 or Xbox 360.
+</div>
+<br/>
 
-## Features
+# ✍️ What You'll Need
 
-### Quality of Life
-* No strum limit executable modification
-* Fast start executable modification
-* Additional intro skip scripting to skip the intro movie
-* "Overshell" - a custom on-screen menu system for changing modifiers, speeds, textures, and more. Opened by pressing `SELECT, SELECT` on most menu screens
-* No Fail Mode modifier
-* Black Venue modifier with decreased load times and system load
+### Playing *Rock Band 1 Deluxe* requires these things:
 
-### Additional Modifications
-* Nice (69%) and Awesome Choke (98-99%) callouts on solo completion
-* New main menu music pulled from other Rock Band titles
+- **A vanilla copy of Rock Band 1** for PS3 or Xbox 360 that you can extract onto your PC. The **USA** version is required.
+    - (PS3: `BLUS30050`, 360: `45410829`)
+- For Console: A **modded/hacked Xbox 360** and a way to transfer files to it. RB1DX currently does not work on PS3 hardware.
+- For Emulator: A PC capable of running RPCS3.
 
-## Building
+<br/>
 
-NOTE: You WILL need a modded/hacked console to play this mod on console. I hope this is clear
+# 📥 Downloads
 
+![last updated:](https://img.shields.io/github/last-commit/hmxmilohax/rock-band-1-deluxe?label=last%20updated%3A)
 
-Setting up the Rock Band 1 Deluxe repo for the first time is meant to be as easy as possible.
-As well, it is designed to allow you to automatically receive updates as the repo is updated.
+### 📥 [RPCS3](https://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-PS3.zip)
 
-Simply go to the Releases of this repo and grab all three files. (two .exe, one .bat)
+### 📥 [Xbox 360](https://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-Xbox.zip)
 
-The two exe's are a couple dependencies, [Git for Windows](https://gitforwindows.org/), and [Dot Net 6.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime).
-Git is required for you to take advantage of auto updating via github pulls. Dot Net is required to build an ARK file, the archive format the game needs to run.
-You can setup git with all default options, same with dot net.
+> NOTE: *Rock Band 1 Deluxe* currently does not work on PS3 hardware.
 
-Once the dependencies are installed, run `_init_repo.bat` in an **empty folder**. git will pull the repo and make sure you are completely up to date.
+<br/>
 
-Copy your base game Rock Band 1 main.hdr and ark files to `_build/Xbox/gen`.
+# 📩 How to Install
 
-From then on simply run `_build_xbox.bat`. This script will pull the repo again for updates, and build the ARK for you and spit it out in `_build/Xbox`
+### Select your Platform of Choice
 
-Then copy the gen folder and the xex from `_build/xbox/` to the location you have installed Rock Band 1. Subsequent copies only require `main.hdr` and `main_2.ark` from `_build/Xbox/gen` to be copied
+  - [RPCS3](#-installing-on-rpcs3)
+  - [Xbox 360](#-installing-on-xbox-360)
+<br/>
 
-Make sure you clear your system cache.
+## 📩 Installing on [RPCS3](https://rpcs3.net/)
 
-To clear system cache, navigate to Storage, and press Y to clear the system cache.
+* **Install your North American copy of Rock Band 1** through the emulator. The [**official RPCS3 site covers this nicely**](https://rpcs3.net/quickstart).
+  * Remember, **Rock Band 1 needs to be** ***BLUS30050***. RPCS3 will tell you this in the game selection GUI under the `Serial` column.
 
-If installing for the first time, make sure you rename the vanilla `default.xex` to `default_vanilla.xex` for safety.
+<img src="dependencies/images/serial.png" alt="Serial">
 
-Also make sure to disable any enabled updates for Rock Band 1 in Aurora. Rock Band 1 deluxe rolls TU5 into its base installation.
+* Download [**Rock Band 1 Deluxe**](hhttps://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-PS3.zip). 
+  * Extract the zip and **drag and drop the `.pkg` file on top of the main RPCS3 window** to install it.
+  * Select `Yes` to confirm.
 
-Run the build script again to pull any new updates committed to the repo and rebuild a new ark.
+<img src="dependencies/images/rpcs3_dxpkg.png" alt="RPCS3 DX PKG">
 
-## Songs
+### ✅ ***Rock Band 1 Deluxe is now installed!***
 
-You can find song packs compatible with all Rock Band titles on the [Spreadsheet](https://docs.google.com/spreadsheets/d/1-3lo2ASxM-3yVr_JH14F7-Lc1v2_FcS5Rv_yDCANEmk/edit#gid=0).
+<br/>
 
+***Sidenote:*** *we recommend* ***enabling `Write Color Buffers`*** *for Rock Band 1 to prevent any character model issues.*
 
-You can also use [Onyx Music Game Toolkit](https://github.com/mtolly/onyxite-customs) to generate your own custom song packs for Rock Band games.
+![Custom Configuration](dependencies/images/customconfig.png)
+![GPU Tab](dependencies/images/gputab.png)
+![Write Color Buffers](dependencies/images/writecolorbuffers.png)
 
-## Included Dependencies
+<br/>
 
-[Git for Windows](https://gitforwindows.org/) - CLI application to allow auto updating rb1dx repo files
+## 📩 Installing on Xbox 360
+
+**NOTE: You WILL need a HACKED/MODDED (RGH or JTAG) Xbox 360 in order to play this mod on console. We hope this is clear.**
+
+* **Install your vanilla copy of Rock Band 1** to your console's hard drive.
+  * In case anything goes wrong, we recommend that you **rename `default.xex` to `default_vanilla.xex`**.
+
+* **Disable updates** for Rock Band 1 in Aurora. *Rock Band 1 Deluxe* rolls the latest one into its base installation.
+
+* Download [**Rock Band 1 Deluxe**](https://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-Xbox.zip). 
+  * **Copy the contents of it to where your copy of Rock Band 1 is installed** (we recommend using FTP to do so).
+  * Select `Yes` to overwrite the files if it asks you to.
+
+### ✅ ***Rock Band 1 Deluxe is now installed!***
+
+<br/>
+
+***Sidenote:*** We also recommend **clearing your song cache**, as well as your **system cache**.
+* *To clear your **song cache**, navigate to `System Settings > Storage > Rock Band 1` and delete the song cache.*
+* *To clear your **system cache**, navigate to `System Settings > Storage` and press `Y` to clear the system cache.*
+
+<br/>
+
+# 🔨 Building (Advanced)
+
+### Installing Python (Required)
+
+* Head to the [**Python downloads**](https://www.python.org/downloads/), download and install Python (version 3.9 or later).
+  * ***Select "Add python.exe to PATH"*** on the installer.
+
+![Python PATH](dependencies/images/pythonpath.png)
+
+### Initializing the Repo
+
+* Go to the **[Releases](https://github.com/hmxmilohax/rock-band-1-deluxe/releases)** of this repo and **download `_init_repo.py`**.
+  * Make a new **empty** folder, **put `_init_repo.py` in the folder, and run it**. This will pull the repo down for you and make sure you're completely up to date. **This will take some time.**
+
+### ***The folder should look like this once it's done:***
+
+![Repo Folder](dependencies/images/repofolder.png)
+
+### ✅ ***The Rock Band 1 Deluxe repo is now set up!***
+
+From here, you can make any personal modifications to the game or build it yourself.
+
+* Navigate to `windows_bats` if you're on Windows or `user_scripts` if you're on Linux.
+  * Run the `build_` script for your platform of choice to build *Rock Band 1 Deluxe*.
+  * Built contents will be in the `_build` folder on the root of the repo.
+
+<br/>
+
+# 🖥️ Dependencies
+
+[Git for Windows](https://gitforwindows.org/) - CLI application to allow auto updating Deluxe repo files
 
 [Dot Net 6.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime) - Needed to run ArkHelper
 
-[Mackiloha](https://github.com/PikminGuts92/Mackiloha) - ArkHelper for building Rock Band 1 ARK - Superfreq for editing milo files
+[Python](https://www.python.org/downloads/) - For user script functionality (NOTE: 3.9 or newer is highly recommended!)
 
-[dtab](https://github.com/mtolly/dtab) - For serializing Rock Band dtb files
+[Mackiloha](https://github.com/PikminGuts92/Mackiloha) - ArkHelper for building Deluxe - SuperFreq for building .bmp_xbox highway images
+
+[swap_rb_art_bytes.py](https://github.com/PikminGuts92/re-notes/blob/master/scripts/swap_rb_art_bytes.py) - Python script for converting Xbox images to PS3
+
+[dtab](https://github.com/mtolly/dtab) - For serializing `.dtb` script files
