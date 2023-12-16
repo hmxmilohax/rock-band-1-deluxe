@@ -40,49 +40,47 @@
 
 ## 📩 Installing on [RPCS3](https://rpcs3.net/)
 
-* **Install your North American copy of Rock Band 1** through the emulator. The [**official RPCS3 site covers this nicely**](https://rpcs3.net/quickstart).
-  * Remember, **Rock Band 1 needs to be** ***BLUS30050***. RPCS3 will tell you this in the game selection GUI under the `Serial` column.
+> If you have a legacy RB1DX install (before November 2023), please re-dump your game before continuing.
 
-<img src="dependencies/images/serial.png" alt="Serial">
+* **Install your North American copy of Rock Band 1** (BLUS30050) through the emulator. The [**official RPCS3 site covers this nicely**](https://rpcs3.net/quickstart).
 
-* Download [**Rock Band 1 Deluxe**](hhttps://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-PS3.zip). 
-  * Extract the zip and **drag and drop the `.pkg` file on top of the main RPCS3 window** to install it.
-  * Select `Yes` to confirm.
+### Download [**Rock Band 1 Deluxe**](https://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-PS3.zip) if you haven't already. 
+* Extract the `.zip` file.
+* **Drag and drop the `.pkg` file on top of the main RPCS3 window** to install it.
+* Select `Yes` to confirm.
 
-<img src="dependencies/images/rpcs3_dxpkg.png" alt="RPCS3 DX PKG">
-
-### ✅ ***Rock Band 1 Deluxe is now installed!***
+### ✅ *Rock Band 1 Deluxe is now installed and ready to play!*
 
 <br/>
 
 ***Sidenote:*** *we recommend* ***enabling `Write Color Buffers`*** *for Rock Band 1 to prevent any character model issues.*
 
-![Custom Configuration](dependencies/images/customconfig.png)
-![GPU Tab](dependencies/images/gputab.png)
-![Write Color Buffers](dependencies/images/writecolorbuffers.png)
-
 <br/>
 
 ## 📩 Installing on Xbox 360
 
-**NOTE: You WILL need a HACKED/MODDED (RGH or JTAG) Xbox 360 in order to play this mod on console. We hope this is clear.**
+> RB1DX requires a modded Xbox 360 console (RGH/JTAG) in order to run.
 
-* **Install your vanilla copy of Rock Band 1** to your console's hard drive.
-  * In case anything goes wrong, we recommend that you **rename `default.xex` to `default_vanilla.xex`**.
+### Install your copy of Rock Band 3 to the console's hard drive. This step is required.
+* We recommend that you rename its default.xex to default_vanilla.xex, just as a backup in case you ever want to go back to vanilla.
+### Download [**Rock Band 1 Deluxe**](https://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-Xbox.zip) if you haven't already
+* Extract the .zip file.
+* Copy the contents of it to where you have Rock Band 1 installed.
+    * You can do this via FTP or by putting the files on a USB drive and copying them using Aurora's file manager.
+* Select Yes to overwrite the files if it asks you to.
 
-* **Disable updates** for Rock Band 1 in Aurora. *Rock Band 1 Deluxe* rolls the latest one into its base installation.
+### Before you launch the game for the first time, we recommend that you...
 
-* Download [**Rock Band 1 Deluxe**](https://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-Xbox.zip). 
-  * **Copy the contents of it to where your copy of Rock Band 1 is installed** (we recommend using FTP to do so).
-  * Select `Yes` to overwrite the files if it asks you to.
+* Disable any title updates you may have for Rock Band 1 in Aurora.
+    * Rock Band 1 Deluxe rolls the latest one into its installation.
+    * If you've never played Rock Band 3 on your console, you don't need to do this.
+* Clear your song cache.
+    * In the dashboard, navigate to System Settings > Storage > Rock Band and delete the song cache.
+* Clear your system cache.
+    * In the dashboard, navigate to System Settings > Storage and press Y to clear the system cache.
+    * If you've never played Rock Band 3 on your console, you don't need to do this.
 
-### ✅ ***Rock Band 1 Deluxe is now installed!***
-
-<br/>
-
-***Sidenote:*** We also recommend **clearing your song cache**, as well as your **system cache**.
-* *To clear your **song cache**, navigate to `System Settings > Storage > Rock Band 1` and delete the song cache.*
-* *To clear your **system cache**, navigate to `System Settings > Storage` and press `Y` to clear the system cache.*
+### ✅ *Rock Band 1 Deluxe is now installed and ready to play!*
 
 <br/>
 
