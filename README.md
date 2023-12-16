@@ -61,7 +61,7 @@
 
 > RB1DX requires a modded Xbox 360 console (RGH/JTAG) in order to run.
 
-### Install your copy of Rock Band 3 to the console's hard drive. This step is required.
+### Install your copy of Rock Band 1 to the console's hard drive. This step is required.
 * We recommend that you rename its default.xex to default_vanilla.xex, just as a backup in case you ever want to go back to vanilla.
 ### Download [**Rock Band 1 Deluxe**](https://nightly.link/hmxmilohax/rock-band-1-deluxe/workflows/build/main/RB1DX-Xbox.zip) if you haven't already
 * Extract the .zip file.
@@ -73,12 +73,12 @@
 
 * Disable any title updates you may have for Rock Band 1 in Aurora.
     * Rock Band 1 Deluxe rolls the latest one into its installation.
-    * If you've never played Rock Band 3 on your console, you don't need to do this.
+    * If you've never played Rock Band 1 on your console, you don't need to do this.
 * Clear your song cache.
     * In the dashboard, navigate to System Settings > Storage > Rock Band and delete the song cache.
 * Clear your system cache.
     * In the dashboard, navigate to System Settings > Storage and press Y to clear the system cache.
-    * If you've never played Rock Band 3 on your console, you don't need to do this.
+    * If you've never played Rock Band 1 on your console, you don't need to do this.
 
 ### ✅ *Rock Band 1 Deluxe is now installed and ready to play!*
 
