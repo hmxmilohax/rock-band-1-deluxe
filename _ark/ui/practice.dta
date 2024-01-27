@@ -86,7 +86,7 @@
          {switch
             {$pcfg get_controller_type}
             (kControllerVocals
-               {practice_panel set_in_vocal_mode TRUE})
+               {practice_panel set_in_vocal_mode FALSE})
             (kControllerDrum
                {practice_panel set_in_vocal_mode FALSE})
             (kControllerGuitar
